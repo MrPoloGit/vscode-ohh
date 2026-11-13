@@ -1,0 +1,67 @@
+{
+  "name": "ohh",
+  "displayName": "OHH (Open Hand History)",
+  "description": "Syntax highlighting, diagnostics, hover, and completion for OHH (.ohh) hand-history files, backed by ohh-ls.",
+  "version": "0.1.0",
+  "publisher": "streetscope",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:ohh"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ohh",
+        "aliases": ["OHH", "Open Hand History"],
+        "extensions": [".ohh"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ohh",
+        "scopeName": "source.ohh",
+        "path": "./syntaxes/ohh.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ohh",
+        "path": "./snippets/ohh.code-snippets"
+      }
+    ],
+    "configuration": {
+      "title": "OHH",
+      "properties": {
+        "ohh.serverPath": {
+          "type": "string",
+          "default": "ohh-ls",
+          "description": "Path to the ohh-ls executable. Defaults to \"ohh-ls\" on PATH; set an absolute path during local development."
+        },
+        "ohh.registryPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the ohh/registry directory ohh-ls should load. Required, ohh-ls has no built-in default ."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "test-grammar": "node ./out-test/test/tokenize-corpus.js"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.1.0"
+  }
+}

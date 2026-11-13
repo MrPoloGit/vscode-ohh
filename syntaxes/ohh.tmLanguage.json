@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "OHH",
+  "scopeName": "source.ohh",
+  "fileTypes": ["ohh"],
+  "patterns": [{ "include": "#value" }],
+  "repository": {
+    "value": {
+      "patterns": [
+        { "include": "#object" },
+        { "include": "#array" },
+        { "include": "#enum-value-string" },
+        { "include": "#string" },
+        { "include": "#constant" },
+        { "include": "#number" }
+      ]
+    },
+
+    "object": {
+      "begin": "\\{",
+      "beginCaptures": { "0": { "name": "punctuation.bracket.ohh" } },
+      "end": "\\}",
+      "endCaptures": { "0": { "name": "punctuation.bracket.ohh" } },
+      "patterns": [
+        { "include": "#comma" },
+        { "include": "#colon" },
+        { "include": "#key" },
+        { "include": "#value" }
+      ]
+    },
+
+    "array": {
+      "begin": "\\[",
+      "beginCaptures": { "0": { "name": "punctuation.bracket.ohh" } },
+      "end": "\\]",
+      "endCaptures": { "0": { "name": "punctuation.bracket.ohh" } },
+      "patterns": [{ "include": "#comma" }, { "include": "#value" }]
+    },
+
+    "comma": { "match": ",", "name": "punctuation.separator.ohh" },
+    "colon": { "match": ":", "name": "punctuation.separator.key-value.ohh" },
+
+    "key": {
+      "comment": "A key is any string immediately followed by a colon (lookahead, not consumed), matched as one token rather than begin/end with nested escape highlighting, since every OHH corpus fixture's keys are plain ASCII with no escapes to highlight.",
+      "match": "\"(?:[^\"\\\\]|\\\\.)*\"(?=\\s*:)",
+      "name": "support.type.property-name.ohh"
+    },
+
+    "enum-value-string": {
+      "comment": "Highlights the VALUE string of the four OHH fields whose values are drawn from a fixed registry enum (ohh/registry/enums.json: game_type, bet_type, street, action), mirroring tree-sitter-ohh/queries/highlights.scm's #any-of? special-casing of the same four keys. Variable-length lookbehind (Oniguruma) matches the preceding \"key\": exactly, without consuming it, so the key itself still gets the ordinary #key scope.",
+      "match": "(?<=\"(?:game_type|bet_type|street|action)\"\\s*:\\s*)\"(?:[^\"\\\\]|\\\\.)*\"",
+      "name": "string.quoted.double.special.enum.ohh"
+    },
+
+    "escape-sequence": {
+      "match": "\\\\([\"\\\\/bfnrt]|u[0-9A-Fa-f]{4})",
+      "name": "constant.character.escape.ohh"
+    },
+
+    "string": {
+      "begin": "\"",
+      "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ohh" } },
+      "end": "\"",
+      "endCaptures": { "0": { "name": "punctuation.definition.string.end.ohh" } },
+      "name": "string.quoted.double.ohh",
+      "patterns": [{ "include": "#escape-sequence" }]
+    },
+
+    "constant": {
+      "match": "\\b(true|false|null)\\b",
+      "name": "constant.language.ohh"
+    },
+
+    "number": {
+      "match": "-?\\b(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?\\b",
+      "name": "constant.numeric.ohh"
+    }
+  }
+}
