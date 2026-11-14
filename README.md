@@ -21,6 +21,13 @@ Development Host), then set `ohh.registryPath` to the absolute path of
 `ohh.serverPath` to `../ohh-ls/build/ohh-ls` if it isn't on `PATH`.
 `.vscode/settings.json` already has both set for this machine's layout.
 
+**Not published to the VS Code Marketplace.** This repo is pushed to
+`github.com/MrPoloGit/vscode-ohh`, but there's no marketplace listing,
+`vsce publish` has not been run, and `package.json` has no `repository`
+field yet. The only ways to run this today are the Extension
+Development Host above or a manually-built `.vsix`
+(`npx @vscode/vsce package`), sideloaded via "Install from VSIX".
+
 ## What's implemented
 
 - **Language registration**: `.ohh` → language id `ohh`
