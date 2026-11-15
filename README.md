@@ -17,7 +17,7 @@ node test/tokenize-corpus.js   # grammar verification, see below
 
 To actually run it in VS Code: open this folder, press F5 (Extension
 Development Host), then set `ohh.registryPath` to the absolute path of
-`../ohh/registry` (no default, `ohh-ls` refuses to guess) and
+`../ohh-data/registry` (no default, `ohh-ls` refuses to guess) and
 `ohh.serverPath` to `../ohh-ls/build/ohh-ls` if it isn't on `PATH`.
 `.vscode/settings.json` already has both set for this machine's layout.
 
@@ -46,7 +46,7 @@ Development Host above or a manually-built `.vsix`
   ordinary property-name scope.
 - **Snippets** (`snippets/ohh.code-snippets`): one per `game_type` value
   (6), each a complete minimal hand skeleton using only the fields
-  `ohh/registry/fields.json` actually marks required, including the
+  `ohh-data/registry/fields.json` actually marks required, including the
   correction found while building `ohh-ls` (`tournament`,
   `tournament_info`, `table_handle`, `table_skin` are deliberately
   **not** in these skeletons, since the registry now marks them optional
@@ -63,7 +63,7 @@ Development Host above or a manually-built `.vsix`
    warnings (missing `repository`/`LICENSE`) `vscode-phh` produces, no
    functional errors.
 2. **The TextMate grammar was tokenized against the real corpus**
-   (`ohh/corpus/`) with `vscode-textmate` + `vscode-oniguruma`, no GUI
+   (`ohh-data/corpus/`) with `vscode-textmate` + `vscode-oniguruma`, no GUI
    window launched, same approach and same reasoning as
    `vscode-phh/test/tokenize-corpus.js`. **15/15 checks pass**, including
    a dedicated check that the multi-hand fixture's blank-line-separated
@@ -97,7 +97,7 @@ never `json` in the first place, so the built-in validator has no reason
 to run on it at all, no `"json.schemas"` exclusion or other override
 needed. This is a structural argument from how VS Code's language
 contribution model works, not an empirical confirmation inside a real
-window; if you press F5 and open `../ohh/corpus/valid/multi-hand.ohh`,
+window; if you press F5 and open `../ohh-data/corpus/valid/multi-hand.ohh`,
 confirming no red squiggles appear would close this out properly.
 
 ## Known limitations / explicitly not done here

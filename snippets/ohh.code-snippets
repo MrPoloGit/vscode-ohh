@@ -38,7 +38,7 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: Holdem \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: Holdem \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   },
   "OHH hand: Omaha": {
     "prefix": "ohh-omaha",
@@ -79,7 +79,7 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: Omaha \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: Omaha \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   },
   "OHH hand: OmahaHiLo": {
     "prefix": "ohh-omahahilo",
@@ -120,7 +120,7 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: OmahaHiLo \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: OmahaHiLo \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   },
   "OHH hand: Stud": {
     "prefix": "ohh-stud",
@@ -161,7 +161,7 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: Stud \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: Stud \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   },
   "OHH hand: StudHiLo": {
     "prefix": "ohh-studhilo",
@@ -202,7 +202,7 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: StudHiLo \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: StudHiLo \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   },
   "OHH hand: Draw": {
     "prefix": "ohh-draw",
@@ -243,6 +243,6 @@
       "}",
       "${0}"
     ],
-    "description": "OHH hand: Draw \u2014 required fields only (per the corrected ohh/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
+    "description": "OHH hand: Draw \u2014 required fields only (per the corrected ohh-data/registry/fields.json; tournament/tournament_info/table_handle/table_skin omitted, found optional in practice)"
   }
 }

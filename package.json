@@ -44,7 +44,7 @@
         "ohh.registryPath": {
           "type": "string",
           "default": "",
-          "description": "Path to the ohh/registry directory ohh-ls should load. Required, ohh-ls has no built-in default ."
+          "description": "Path to the ohh-data/registry directory ohh-ls should load. Required, ohh-ls has no built-in default ."
         }
       }
     }

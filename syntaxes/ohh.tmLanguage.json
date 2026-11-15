@@ -47,7 +47,7 @@
     },
 
     "enum-value-string": {
-      "comment": "Highlights the VALUE string of the four OHH fields whose values are drawn from a fixed registry enum (ohh/registry/enums.json: game_type, bet_type, street, action), mirroring tree-sitter-ohh/queries/highlights.scm's #any-of? special-casing of the same four keys. Variable-length lookbehind (Oniguruma) matches the preceding \"key\": exactly, without consuming it, so the key itself still gets the ordinary #key scope.",
+      "comment": "Highlights the VALUE string of the four OHH fields whose values are drawn from a fixed registry enum (ohh-data/registry/enums.json: game_type, bet_type, street, action), mirroring tree-sitter-ohh/queries/highlights.scm's #any-of? special-casing of the same four keys. Variable-length lookbehind (Oniguruma) matches the preceding \"key\": exactly, without consuming it, so the key itself still gets the ordinary #key scope.",
       "match": "(?<=\"(?:game_type|bet_type|street|action)\"\\s*:\\s*)\"(?:[^\"\\\\]|\\\\.)*\"",
       "name": "string.quoted.double.special.enum.ohh"
     },

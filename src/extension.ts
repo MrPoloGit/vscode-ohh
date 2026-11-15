@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext): void {
   if (!registryPath) {
     vscode.window.showErrorMessage(
       'OHH: the "ohh.registryPath" setting is not set. ohh-ls needs the path ' +
-        "to the ohh/registry directory to start."
+        "to the ohh-data/registry directory to start."
     );
     return;
   }
